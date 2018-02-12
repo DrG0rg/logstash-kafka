@@ -24,7 +24,7 @@ namespace log4net.kafka.Dto
         string Application { get; set; }
 
         /// <summary>
-        /// Set of tags set in the configuration
+        ///     Set of tags set in the configuration
         /// </summary>
         [JsonProperty(PropertyName = "customTags")]
         string CustomTags { get; set; }

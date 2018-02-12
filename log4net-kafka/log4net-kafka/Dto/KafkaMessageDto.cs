@@ -20,7 +20,7 @@ namespace log4net.kafka.Dto
         public string Application { get; set; }
 
         /// <inheritdoc />
-        [JsonProperty(propertyName: "customTags")]
+        [JsonProperty(PropertyName = "customTags")]
         public string CustomTags { get; set; }
 
         /// <inheritdoc />

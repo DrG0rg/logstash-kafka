@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using log4net.Core;
 using log4net.kafka.Dto;
 using log4net.Layout;
 using Newtonsoft.Json;
+
+[assembly: InternalsVisibleTo("log4net-kafka.Test")]
 
 namespace log4net.kafka
 {
@@ -69,7 +72,8 @@ namespace log4net.kafka
             messageObject.Initialize(loggingEvent, ParsedParameters);
             Dictionary<string, object> msg = new Dictionary<string, object>();
 
-            foreach (KeyValuePair<string, object> messageObjectAdditionalParameter in messageObject.AdditionalParameters)
+            foreach (KeyValuePair<string, object> messageObjectAdditionalParameter in messageObject.AdditionalParameters
+            )
                 msg[messageObjectAdditionalParameter.Key] = messageObjectAdditionalParameter.Value;
 
             // write message properties second to override additional parameters on naming collision

@@ -18,7 +18,7 @@ namespace log4net.kafka
             Application = EnvironmentResolver.Resolve(layout.Application);
             CustomTags = EnvironmentResolver.Resolve(layout.CustomTags);
             IncludeProperties = layout.IncludeProperties;
-            MessageType = Type.GetType(layout.MessageType);
+            MessageType = Type.GetType(EnvironmentResolver.Resolve(layout.MessageType));
 
             if (MessageType == null)
                 throw new ArgumentException($"Cannot create any type from {layout.MessageType}");
