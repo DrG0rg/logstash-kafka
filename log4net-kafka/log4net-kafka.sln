@@ -5,9 +5,7 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "log4net-kafka", "log4net-kafka\log4net-kafka.csproj", "{8E9D6026-7A11-4ACE-9493-840F30C03D4E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "log4net-kafka.Test", "log4net-kafka.Test\log4net-kafka.Test.csproj", "{81DD6B7F-9D15-40F7-8278-869718C6DDCE}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BE23BBC3-631D-4B69-BF4A-7C209EF1B43B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "log4net-kafka.Test", "Tests\log4net-kafka.Test\log4net-kafka.Test.csproj", "{81DD6B7F-9D15-40F7-8278-869718C6DDCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
