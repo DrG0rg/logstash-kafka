@@ -8,7 +8,7 @@ namespace log4net.kafka.Dto
     /// <summary>
     ///     Interface for messages being sent to kafka by log4net
     /// </summary>
-    internal interface IKafkaMessage
+    public interface IKafkaMessage
     {
         /// <summary>
         ///     Gets or sets a list of additional parameters
