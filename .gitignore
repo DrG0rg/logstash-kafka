@@ -6,3 +6,6 @@
 /log4net-kafka/log4net-kafka/bin/Debug
 /.vs
 /log4net-kafka/.vs/log4net-kafka/v15
+/log4net-kafka/log4net-kafka.Test/obj
+/log4net-kafka/.vs/config
+/log4net-kafka/log4net-kafka.Test/bin/Debug/netcoreapp2.0

@@ -1,0 +1,18 @@
+{
+  "profiles": {
+    "log4net-kafka.Test": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ENV_BUFFER": "249",
+        "ENV_BOOTSTRAP": "PLAIN://TSTKAFKA:4711",
+        "ENV_RETRIES": "7",
+        "ENV_TOPIC": "logstashEnv",
+        "ENV_MSGTYPE": "log4net.kafka.Test.Models.CustomKafkaMessage,log4net-kafka.Test",
+        "ENV_APPLICATION": "xUnitEnv",
+        "ASPNETCORE_ENVIRONMENT": "xUnitTest",
+        "ENV_CLIENTID": "envclient",
+        "ENV_MAXBLOCK": "37"
+      }
+    }
+  }
+}
