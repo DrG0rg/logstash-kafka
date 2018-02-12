@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\log4net-kafka\log4net-kafka.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Configurations\Config1.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -36,6 +32,10 @@
 
   <ItemGroup>
     <Folder Include="Configurations\Invalid\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\log4net-kafka\log4net-kafka.csproj" />
   </ItemGroup>
 
 </Project>
