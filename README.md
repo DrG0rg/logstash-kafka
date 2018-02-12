@@ -5,9 +5,9 @@ This package provide quick and flexibal access to log4net with kafka and logstas
 1.	Installation process: download from nuget
 2.	Software dependencies: ConfluentKafka, log4net, Newtonsoft.Json
 
-#Example Configuration
+# Example Configuration
 ```xml
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <log4net>
   <appender name="KafkaAppender" type="log4net.kafka.KafkaAppender, log4net-kafka">
     <KafkaAppenderSettings>
@@ -16,8 +16,9 @@ This package provide quick and flexibal access to log4net with kafka and logstas
       </BootstrapServers>
       <Topic value="logstash" />
     </KafkaAppenderSettings>
-    <layout type="log4net.kafka.KafkaLogstashLayout,log4net-kafka" >
-      <CustomTags value="ENV=${ASPNETCORE_ENVIRONMENT}" /> <!-- here you can insert references to environment variables -->
+    <layout type="log4net.kafka.KafkaLogstashLayout,log4net-kafka">
+      <CustomTags value="ENV=${ASPNETCORE_ENVIRONMENT}" />
+      <!-- here you can insert references to environment variables -->
       <IncludeProperties>
         <!-- IncludeProperties contain the name of the log4net config variables you declared in code like: -->
         <!-- GlobalContext.Properties["example1"] = "foo"               -->
@@ -28,10 +29,11 @@ This package provide quick and flexibal access to log4net with kafka and logstas
         <add value="example3" />
       </IncludeProperties>
     </layout>
-    <root>
-        <level value="DEBUG"/>
-        <appender-ref ref="KafkaAppender" />
-    </root>
+  </appender>
+  <root>
+    <level value="DEBUG" />
+    <appender-ref ref="KafkaAppender" />
+  </root>
 </log4net>
 ```
 
