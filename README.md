@@ -2,7 +2,6 @@
 This package provide quick and flexibal access to log4net with kafka and logstash
 
 # Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
 1.	Installation process: download from nuget
 2.	Software dependencies: ConfluentKafka, log4net, Newtonsoft.Json
 
