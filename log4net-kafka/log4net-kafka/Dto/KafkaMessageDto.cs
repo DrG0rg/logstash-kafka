@@ -44,7 +44,7 @@ namespace log4net.kafka.Dto
         public string Message { get; set; }
 
         /// <inheritdoc />
-        [JsonProperty(PropertyName = "ow")]
+        [JsonProperty(PropertyName = "os")]
         public string OperatingSystem { get; set; } = Environment.OSVersion.VersionString;
 
         /// <inheritdoc />
