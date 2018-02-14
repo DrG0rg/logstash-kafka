@@ -51,6 +51,12 @@ namespace log4net.kafka
         /// </summary>
         public KafkaLayoutParameters ParsedParameters { get; private set; }
 
+        /// <summary>
+        ///     Indicates whether null values are sent to logstash. If set to <c>false</c> parameters having <c>null</c> set are
+        ///     not transmitted.
+        /// </summary>
+        public bool SendNullValues { get; set; } = true;
+
         /// <inheritdoc />
         public override void ActivateOptions()
         {

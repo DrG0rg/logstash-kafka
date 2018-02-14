@@ -19,6 +19,7 @@ namespace log4net.kafka
             CustomTags = EnvironmentResolver.Resolve(layout.CustomTags);
             IncludeProperties = layout.IncludeProperties;
             MessageType = Type.GetType(EnvironmentResolver.Resolve(layout.MessageType));
+            SendNullValues = layout.SendNullValues;
 
             if (MessageType == null)
                 throw new ArgumentException($"Cannot create any type from {layout.MessageType}");
@@ -47,5 +48,11 @@ namespace log4net.kafka
         ///     Type of messages to send to logstash
         /// </summary>
         public Type MessageType { get; set; }
+
+        /// <summary>
+        ///     Indicates whether null values are sent to logstash. If set to <c>false</c> parameters having <c>null</c> set are
+        ///     not transmitted.
+        /// </summary>
+        public bool SendNullValues { get; set; }
     }
 }

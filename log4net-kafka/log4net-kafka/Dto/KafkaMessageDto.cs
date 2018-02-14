@@ -77,10 +77,11 @@ namespace log4net.kafka.Dto
             {
                 object value = GlobalContext.Properties[propName] ?? LogicalThreadContext.Properties[propName];
 
-                if (value is LogicalThreadContextStack ltc && ltc.Count > 0)
-                    value = ltc.ToString();
+                if (value is LogicalThreadContextStack ltc)
+                    value = ltc.Count > 0 ? ltc.ToString() : null;
 
-                AdditionalParameters[propName] = value;
+                if (value != null || (parameters?.SendNullValues ?? true))
+                    AdditionalParameters[propName] = value;
             }
         }
     }

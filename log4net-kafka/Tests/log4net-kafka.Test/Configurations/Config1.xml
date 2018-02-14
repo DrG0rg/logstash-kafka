@@ -26,6 +26,7 @@
         <add value="example3" />
       </IncludeProperties>
       <MessageType value="log4net.kafka.Test.Models.CustomKafkaMessage,log4net-kafka.Test" />
+      <SendNullValues value="false" />
     </layout>
   </appender>
   <root>

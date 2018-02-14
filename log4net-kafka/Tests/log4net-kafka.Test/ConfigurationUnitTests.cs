@@ -48,6 +48,7 @@ namespace log4net.kafka.Test
             Assert.Equal(new[] {"example1", "example2", "example3"}, layout.IncludeProperties);
             Assert.Equal($"{typeof(CustomKafkaMessage).FullName},{Assembly.GetExecutingAssembly().GetName().Name}",
                 layout.MessageType);
+            Assert.False(layout.ParsedParameters.SendNullValues);
         }
 
         [Fact]
@@ -70,6 +71,7 @@ namespace log4net.kafka.Test
             Assert.Equal("ENV=xUnitTest", layout.ParsedParameters.CustomTags);
             Assert.Equal(new[] {"example1", "example2", "example3"}, layout.ParsedParameters.IncludeProperties);
             Assert.Equal(typeof(CustomKafkaMessage), layout.ParsedParameters.MessageType);
+            Assert.True(layout.ParsedParameters.SendNullValues);
         }
     }
 }
