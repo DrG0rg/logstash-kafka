@@ -61,7 +61,7 @@ namespace log4net.kafka.Dto
             if (fromEvent == null) throw new ArgumentNullException(nameof(fromEvent));
 
             Application = parameters?.Application;
-            CustomTags = parameters?.CustomTags;
+            CustomTags = EnvironmentResolver.Resolve(parameters?.CustomTags);
             Exception = fromEvent.ExceptionObject != null
                 ? new KafkaMessageExceptionDto(fromEvent.ExceptionObject)
                 : null;
