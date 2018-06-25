@@ -68,7 +68,7 @@ namespace log4net.kafka.Dto
             Level = fromEvent.Level.Name;
             LoggerName = fromEvent.Repository.Name;
             Message = fromEvent.RenderedMessage;
-            Timestamp = fromEvent.TimeStampUtc.ToString("s");
+            Timestamp = fromEvent.TimeStampUtc.ToString("o");
 
             foreach (string key in fromEvent.Properties.GetKeys().Distinct())
                 AdditionalParameters[key] = fromEvent.Properties[key];
