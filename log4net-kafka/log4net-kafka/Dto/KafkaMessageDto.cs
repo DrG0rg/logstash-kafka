@@ -48,7 +48,7 @@ namespace log4net.kafka.Dto
         public string OperatingSystem { get; set; } = Environment.OSVersion.VersionString;
 
         /// <inheritdoc />
-        [JsonProperty(PropertyName = "timestamp")]
+        [JsonProperty(PropertyName = "@timestamp")]
         public string Timestamp { get; set; }
 
         /// <inheritdoc />
