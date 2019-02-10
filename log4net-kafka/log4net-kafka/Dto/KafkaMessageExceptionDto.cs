@@ -22,6 +22,11 @@ namespace log4net.kafka.Dto
             Stacktrace = fromException.StackTrace;
         }
 
+        public KafkaMessageExceptionDto()
+        {
+
+        }
+
         /// <summary>
         ///     Type of the exception
         /// </summary>
