@@ -58,7 +58,7 @@ namespace log4net.kafka
             {
                 Layout.Format(sr, loggingEvent);
 
-                if (Layout.IgnoresException && loggingEvent.ExceptionObject != null)
+                if (!Layout.IgnoresException && loggingEvent.ExceptionObject != null)
                     sr.Write(loggingEvent.GetExceptionString());
 
                 return sr.ToString();
