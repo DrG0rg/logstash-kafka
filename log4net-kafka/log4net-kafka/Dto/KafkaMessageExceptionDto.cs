@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace log4net.kafka.Dto
 {
@@ -20,6 +21,15 @@ namespace log4net.kafka.Dto
             Message = fromException.Message;
             ExceptionType = fromException.GetType().FullName;
             Stacktrace = fromException.StackTrace;
+
+            if(fromException is AggregateException aggException)
+            {
+                InnerExceptions.AddRange(aggException.InnerExceptions.Select(x => new KafkaMessageExceptionDto(x)));
+            }
+            else if(fromException.InnerException != null)
+            {
+                InnerExceptions.Add(new KafkaMessageExceptionDto(fromException.InnerException));
+            }
         }
 
         public KafkaMessageExceptionDto()
