@@ -78,8 +78,7 @@ namespace log4net.kafka
             messageObject.Initialize(loggingEvent, ParsedParameters);
             Dictionary<string, object> msg = new Dictionary<string, object>();
 
-            foreach (KeyValuePair<string, object> messageObjectAdditionalParameter in messageObject.AdditionalParameters
-            )
+            foreach (KeyValuePair<string, object> messageObjectAdditionalParameter in messageObject.AdditionalParameters)
                 msg[messageObjectAdditionalParameter.Key] = messageObjectAdditionalParameter.Value;
 
             // write message properties second to override additional parameters on naming collision
