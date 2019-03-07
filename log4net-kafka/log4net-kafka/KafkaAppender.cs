@@ -12,7 +12,7 @@ namespace log4net.kafka
     /// </summary>
     public class KafkaAppender : AppenderSkeleton
     {
-        private Producer _out;
+        private Producer<string, string> _out;
 
         /// <summary>
         ///     Settings of the <see cref="KafkaAppender" />.
@@ -27,7 +27,11 @@ namespace log4net.kafka
             if (KafkaAppenderSettings == null) throw new LogException($"{nameof(KafkaAppenderSettings)} are missing");
             KafkaAppenderSettings.Validate();
 
-            _out = new Producer(KafkaAppenderSettings.Params);
+            ProducerConfig kafkaProducerConfig = new ProducerConfig
+            {
+                BootstrapServers = string.Join(",", KafkaAppenderSettings.BootstrapServers)
+            };
+            _out = new ProducerBuilder<string, string>(kafkaProducerConfig).Build();
         }
 
 
@@ -42,8 +46,11 @@ namespace log4net.kafka
         /// <inheritdoc />
         protected override void Append(LoggingEvent loggingEvent)
         {
-            _out.ProduceAsync(KafkaAppenderSettings.Topic, Encoding.UTF8.GetBytes(KafkaAppenderSettings.Topic),
-                Encoding.UTF8.GetBytes(GenerateMessage(loggingEvent)));
+            _out.ProduceAsync(KafkaAppenderSettings.Topic, new Message<string, string>
+            {
+                Key = KafkaAppenderSettings.Topic,
+                Value = GenerateMessage(loggingEvent)
+            });
         }
 
         /// <summary>
