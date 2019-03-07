@@ -5,7 +5,7 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <ApplicationIcon />
     <StartupObject />
-    <Version>0.1.4-beta</Version>
+    <Version>0.1.5-beta</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Authors>DrG0rg</Authors>
@@ -17,8 +17,8 @@
     <RepositoryUrl>https://github.com/DrG0rg/logstash-kafka.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>log4net logstash kafka</PackageTags>
-    <AssemblyVersion>0.1.4.0</AssemblyVersion>
-    <FileVersion>0.1.4.0</FileVersion>
+    <AssemblyVersion>0.1.5.0</AssemblyVersion>
+    <FileVersion>0.1.5.0</FileVersion>
     <RootNamespace>log4net.kafka</RootNamespace>
   </PropertyGroup>
 
